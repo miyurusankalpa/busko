@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon name="bus"></ion-icon> BusKo Routes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      {{ item }}
+    </button>
+  </ion-list>
+</ion-content>
+
+      <button ion-button full>submit</button>
+
+    <ion-icon name="heart"></ion-icon>
+  Made at SLIIT Mini-Hackathon

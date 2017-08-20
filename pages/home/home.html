@@ -5,7 +5,6 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
     <ion-col text-center>
   Save time by knowing your bus time
@@ -28,6 +27,7 @@
           {{ item }}
         </ion-item>
       </ion-list>
+      <button ion-button block (click)="submit()" class="submit">submit</button>
 
 </ion-list>
     <ion-icon name="heart"></ion-icon>
