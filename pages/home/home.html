@@ -1,5 +1,6 @@
 <ion-header>
-  <ion-navbar>
+<ion-navbar *navbar primary></ion-navbar>
+  <ion-navbar primary>
     <ion-title>
       <ion-icon name="bus"></ion-icon> BusKo
     </ion-title>
@@ -7,30 +8,33 @@
 </ion-header>
 <ion-content padding>
     <ion-col text-center>
-  Save time by knowing your bus time
+  Save time by knowing your bus arrival time<br>
     </ion-col>
-  <p>
+<!--<ion-img src="assets/i.png" width="80" height="80"></ion-img>-->
 
-    <ion-list>
-
-      <ion-searchbar placeholder="From" (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-searchbar placeholder="From" [(ngModel)]="from2" (ionInput)="getItems1($event)"></ion-searchbar>
       <ion-list>
-        <ion-item *ngFor="let item of items">
-          {{ item }}
+        <ion-item *ngFor="let item1 of items1" >
+        <div (click)="itemSelected1(item1)">  {{ item1 }} </div>
         </ion-item>
       </ion-list>
 
-
-      <ion-searchbar placeholder="Destintion" (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-searchbar placeholder="Destination" [(ngModel)]="to2" (ionInput)="getItems2($event)"></ion-searchbar>
       <ion-list>
-        <ion-item *ngFor="let item of items">
-          {{ item }}
+        <ion-item *ngFor="let item2 of items2">
+          <div (click)="itemSelected2(item2)">  {{ item2 }} </div>
         </ion-item>
       </ion-list>
+
       <button ion-button block (click)="submit()" class="submit">submit</button>
+      
+	  <ion-footer>
+      <ion-row>
+      <ion-col text-center>
+        <ion-icon name="heart"></ion-icon> Made at SLIIT Mini-Hackathon 2017
+      </ion-col>
+    </ion-row>
+	  </ion-footer>
 
-</ion-list>
-    <ion-icon name="heart"></ion-icon>
-  Made at SLIIT Mini-Hackathon
-  </p>
+
 </ion-content>

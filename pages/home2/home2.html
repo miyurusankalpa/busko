@@ -5,9 +5,12 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-
-<ion-content>
+	
+<ion-content padding>
+  <ion-col text-center>
+	Available bus routes from {{ from2 }} to {{ to2 }}<br>
+    </ion-col>
+	
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
       {{ item }}
@@ -17,5 +20,10 @@
 
       <button ion-button full>submit</button>
 
-    <ion-icon name="heart"></ion-icon>
-  Made at SLIIT Mini-Hackathon
+	  <ion-footer>
+      <ion-row>
+      <ion-col text-center>
+        <ion-icon name="heart"></ion-icon> Made at SLIIT Mini-Hackathon 2017
+      </ion-col>
+    </ion-row>
+	  </ion-footer>

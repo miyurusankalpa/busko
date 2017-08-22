@@ -1,17 +1,22 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar primary>
     <ion-title>
-      <ion-icon name="bus"></ion-icon> BusKo
+      <ion-icon name="bus"></ion-icon> BusKo Time
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-
-<ion-content>
- Bus will arive in 3 mintess
+<ion-content padding>
+<ion-col text-center>
+ <h2> <ion-icon name="clock"></ion-icon> Next bus for the {{ route }} will arrive in {{ min }} minutes</h2>
+ </ion-col>
+ 
+      <button ion-button full (click)="update()" >update</button>
 </ion-content>
 
-      <button ion-button full>submit</button>
-
-    <ion-icon name="heart"></ion-icon>
-  Made at SLIIT Mini-Hackathon
+     <ion-footer>
+      <ion-row>
+      <ion-col text-center>
+        <ion-icon name="heart"></ion-icon> Made at SLIIT Mini-Hackathon 2017
+      </ion-col>
+    </ion-row>
+	  </ion-footer>

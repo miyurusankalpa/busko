@@ -15,7 +15,7 @@ import { HomePage3 } from '../pages/home3/home3';
     HomePage,
     HomePage2,
     HomePage3
-  ],
+	],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)

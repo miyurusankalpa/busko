@@ -9,39 +9,61 @@ import { HomePage2 } from '../home2/home2';
 })
 
 export class HomePage {
-  items;
+  items1; items2; from2; to2;
+  
+  constructor(public navCtrl: NavController) {  }
 
-  constructor(public navCtrl: NavController) {
-  }
-
-  initializeItems() {
-    this.items = [
+  initializeItems1() {
+    this.items1 = [
       'Malabe',
       'Kaduwela'
     ];
   }
-
-  submit() {
-    this.navCtrl.push(HomePage2);
+  
+  initializeItems2() {
+	this.items2 = [
+      'Malabe',
+      'Kaduwela'
+    ];
   }
-
-/*  itemSelected(item: string) {
-    console.log("Selected Item", item);
-  }*/
-
-  getItems(ev) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the ev target
-    var val = ev.target.value;
+  
+  submit() {
+    this.navCtrl.push(HomePage2, {
+      f: this.from2,
+      t: this.to2
+    });
+  }
+    
+  itemSelected1(data) {
+    this.from2 = data;
+	this.items1 = [];
+  }
+  itemSelected2(data) {
+    this.to2 = data;
+	this.items2 = [];
+  }
+  
+getItems1(ev) {
+	this.initializeItems1();
+	var val = ev.target.value;
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.items1 = this.items1.filter((item1) => {
+        return (item1.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
-  }
+}
+getItems2(ev) {
+	this.initializeItems2();
+	var val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items2 = this.items2.filter((item2) => {
+        return (item2.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+}
 
 }
